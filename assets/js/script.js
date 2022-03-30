@@ -43,6 +43,9 @@ function ElapseDay() {
 }
 
 $(".eventcol").on("click", function() {
+    if ($(this).children("textarea").length > 0) {
+        return;
+    }
     var currentText = $(this).text();
     var textarea = $("<textarea>")
     $(textarea)
