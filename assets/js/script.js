@@ -1,10 +1,13 @@
 
 function LoadTasks(dateStamp) {
+    
     var tasksJson = localStorage.getItem(`tasksdate-${dateStamp}`);
     var tasks = [];
     if (tasksJson) {
         tasks = JSON.parse(tasksJson);
     }
+
+    console.log(tasks);
 
     $(tasks).each(function() {
         var cellId = "#" + this.hour;
@@ -65,11 +68,31 @@ $(".saveBtn").on("click", function() {
         parent.append(toSave);
     }
 
-    var dateStamp = moment().format("YYYYMMDD");
-
-    SaveTasks(dateStamp);
+    SaveTasks(
+        moment($("#date-selector")
+        .datepicker("getDate")
+        )
+        .format("YYYY-MM-DD")
+    )
 });
+
+
 
 var int = setInterval(ElapseDay, (1000 * 60 * 60));
 ElapseDay();
-LoadTasks(moment().format("YYYYMMDD"));
+
+LoadTasks(moment().format("YYYY-MM-DD"));
+
+function LoadDate(date, params) {
+    var cols = $(".eventcol");
+    $(cols).each(function() {
+        $(this).html("");
+    });
+    LoadTasks(date);
+}
+
+$("#date-selector")
+    .datepicker({
+        onClose: LoadDate,
+        dateFormat: "yy-mm-dd"
+    });

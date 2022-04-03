@@ -23,11 +23,16 @@
       <p id="currentDay" class="lead"></p>
     </header>
     <div class="container">
+      <div class="row">
+        <div class="column col-12 text-right">
+          <label for="date-selector">Select a Date:</label> <input type="text" id="date-selector" />
+        </div>
+      </div>
       <!-- Timeblocks go here -->
       <div class="row">
         <div class="column col-1 text-right hour">9am</div>
         <div class="column col-10 eventcol" id="09"></div>
-        <div class="column col-1 saveBtn text-center my-auto h-100 align-items-center"><span class="oi oi-lock-locked"></span></div>
+        <div class="column col-1 saveBtn text-center my-auto h-100"><span class="oi oi-lock-locked"></span></div>
       </div>
       <div class="row">
         <div class="column col-1 my-3 text-right hour">10am</div>
@@ -74,6 +79,9 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+    
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
     <script src="./assets/js/script.js"></script>
   </body>
 </html>
