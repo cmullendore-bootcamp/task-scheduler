@@ -1,4 +1,4 @@
-# Work Day Scheduler Starter Code
+# Work Day Scheduler
 This workday planner allows you to select a date
 and save the tasks that you need to accomplish on that day.
 
